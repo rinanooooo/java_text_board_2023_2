@@ -14,7 +14,7 @@ public class Main {
 
     makeTestData(articles); // 테스터용 데이터 생성 메서드
 
-    if (articles.size() > 0) { // 데이터가 있을 때
+    if (articles.size() > 0) { // 데이터가 있을 때 마지막 게시물 번호 이후로 id 정하기
       articleLastId = articles.get(articles.size() - 1).id;
       // articles.size() - 1 == 마지막 게시물
     }
@@ -34,7 +34,7 @@ public class Main {
         System.out.println("---- 게시물 목록 ----");
         System.out.println("번호\t/\t제목");
 
-        for (int i = articles.size()-1 ; i >= 0 ; i-- ) {
+        for (int i = articles.size() - 1; i >= 0; i--) {
           Article article = articles.get(i);
           System.out.printf("%d\t/\t%s\n", article.id, article.title);
         }
@@ -68,6 +68,8 @@ public class Main {
 
         Article article = new Article(id, title, body);
         lastArticle = article;
+
+        articles.add(article); // 새로 작성한 게시물 articles에 추가
         System.out.println("입력된 된 게시물 객체 : " + article);
 
         System.out.printf("%d번 게시물이 등록되었습니다.\n", article.id);
