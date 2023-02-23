@@ -29,10 +29,7 @@ public class Main {
         articleLastId++;
         //articleLastId = id;
 
-        Article article = new Article();
-        article.id = id;
-        article.title = title;
-        article.body = body;
+        Article article = new Article(id, title, body);
 
         System.out.println("생성 된 게시물 객체 : "+article);
 
@@ -52,6 +49,12 @@ class Article {
   int id;
   String title;
   String body;
+
+  public Article(int id, String title, String body) {
+    this.id = id;
+    this.title = title;
+    this.body = body;
+  }
 
   public int getId() {
     return id;
