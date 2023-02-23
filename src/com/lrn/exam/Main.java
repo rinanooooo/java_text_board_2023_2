@@ -29,7 +29,8 @@ public class Main {
         System.out.println("---- 게시물 목록 ----");
         System.out.println("번호\t/\t제목");
 
-        for (Article article : articles) {
+        for (int i = articles.size()-1 ; i >= 0 ; i-- ) {
+          Article article = articles.get(i);
           System.out.printf("%d\t/\t%s\n", article.id, article.title);
         }
         System.out.println("--------------------");
