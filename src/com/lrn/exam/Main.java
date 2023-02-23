@@ -12,12 +12,7 @@ public class Main {
 
     List<Article> articles = new ArrayList<>();
 
-    // 테스터용 데이터 시작 
-    articles.add(new Article(1, "title01", "body01"));
-    articles.add(new Article(2, "title02", "body02"));
-    articles.add(new Article(3, "title03", "body03"));
-    // 테스터용 데이터 끝 
-
+    makeTestData(articles); // 테스터용 데이터 생성 메서드
 
     System.out.println("== 게시판 v 0.1 ==");
     System.out.println("== 프로그램 시작 ==");
@@ -75,6 +70,12 @@ public class Main {
     } // while
     sc.close();
   } // main
+
+  private static void makeTestData(List<Article> articles) {
+    articles.add(new Article(1, "title01", "body01"));
+    articles.add(new Article(2, "title02", "body02"));
+    articles.add(new Article(3, "title03", "body03"));
+  }// 테스터용 데이터 생성 메서드
 } // Main
 
 class Article {
