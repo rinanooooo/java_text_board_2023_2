@@ -14,6 +14,11 @@ public class Main {
 
     makeTestData(articles); // 테스터용 데이터 생성 메서드
 
+    if (articles.size() > 0) { // 데이터가 있을 때
+      articleLastId = articles.get(articles.size() - 1).id;
+      // articles.size() - 1 == 마지막 게시물
+    }
+
     System.out.println("== 게시판 v 0.1 ==");
     System.out.println("== 프로그램 시작 ==");
 
